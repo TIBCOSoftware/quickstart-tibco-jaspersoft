@@ -162,7 +162,7 @@
             "Type": "String",
             "Default": "t3.micro",
             "AllowedValues": [
-                "t3.nano",
+                "t2.nano",
                 "t3.micro",
                 "t3.small",
                 "t3.medium",
@@ -347,7 +347,7 @@
             "Properties": {
                 "TemplateURL": {
                     "Fn::Sub": [
-                       "https://${QSS3BucketName}.s3${QSS3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}submodules/quickstart-linux-bastion/submodules/quickstart-aws-vpc/templates/aws-vpc.template",
+                       "https://${QSS3BucketName}.s3${QSS3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}submodules/quickstart-linux-bastion/submodules/quickstart-aws-vpc/templates/aws-vpc.template.yaml",
                        {
                           "QSS3Region": {
                              "Fn::If": [
@@ -367,9 +367,6 @@
                                 "Ref": "AvailabilityZones"
                             }
                         ]
-                    },
-                    "KeyPairName": {
-                        "Ref": "KeyPairName"
                     },
                     "NumberOfAZs": "2",
                     "PrivateSubnet1ACIDR": {
